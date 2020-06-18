@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Government Of Andhra Pradesh</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="icon" type="image/icon type" href="images/finallogo.png">
+  <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.13.0/firebase-firestore.js"></script>
+  <script src="js/goodFateAttendance.js"></script>
+  <link rel="stylesheet" href="css/goodFateAttendance.css" >
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Government Portal</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="karmaIsaBitch.html">Feedback</a></li>
+      <li class="active dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Attendance<span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Students</a></li>
+          <li class="active"><a href="#">Teachers</a></li> 
+        </ul>
+      </li>
+      <li><a href="#">Time Table</a></li>
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">More<span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="additionalActivities.html">Add Updates</a></li>
+        </ul>
+      </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Name</a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+    </ul>
+  </div>
+</nav>
+<br>
+<br><br>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-3">
+      <table class="table table-hover" style="width: 100%;">
+          <thead>
+            <tr>
+              <th>College Name</th>
+            </tr>
+          </thead>
+          <tbody id="tdata">
+            
+          </tbody>
+      </table>
+    </div>
+    <div class="col-lg-3">
+      <table class="table table-hover" style="width: 100%;">
+        <thead>
+          <tr>
+            <th>Teacher ID</th>
+          </tr>
+        </thead>
+        <tbody id="teachdata">
+            
+        </tbody>
+      </table>
+    </div>
+    <div class="col-lg-3">
+      <table class="table table-hover" style="width: 100%;">
+        <thead>
+          <tr>
+            <th>Subjects Dealt</th>
+          </tr>
+        </thead>
+        <tbody id="subdata">
+            
+        </tbody>
+      </table>
+    </div>
+    <div class="col-lg-3">
+        <table class="table table-hover" style="width: 100%;">
+          <thead>
+            <tr>
+              <th>Attendance</th>
+            </tr>
+          </thead>
+          <tbody id="attdata">
+              
+          </tbody>
+        </table>
+      </div>
+  </div>
+</div>   
+</body>
+</html>
