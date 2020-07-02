@@ -11,12 +11,14 @@ var firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 var firestore = firebase.firestore();
-var i,j=0;
+var i,j=0,co=[];
 const docRef = firestore.collection('Colleges').doc('collegeCodes');
 docRef.get().then(function(doc){
-        var len =Object.keys(doc.data()).length
-        for(i=1;i<=len;i++){
-            var cCode = doc.data()[i];
+    console.log(doc.data());
+        var len =doc.data().codes.length
+        for(i=0;i<len;i++){
+            var cCode = doc.data().codes[i];
+            co.push(cCode);
             const colRef = firestore.collection(cCode).doc('collegeDetails');
             colRef.get().then(function(cdoc){
                 var cName = cdoc.data().collegeName;
@@ -24,7 +26,7 @@ docRef.get().then(function(doc){
                 var table = document.getElementById("tdata");
                 var row = table.insertRow(j);
                 row.insertCell(0).innerHTML=cName;
-                row.insertCell(1).innerHTML=cCode;
+                row.insertCell(1).innerHTML=co[j];
                 var cell2 = row.insertCell(2);
                 if(cSite==null){
                     cell2.innerHTML = cSite;

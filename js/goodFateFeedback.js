@@ -15,9 +15,9 @@ var i,j=0;
 var collegeCodesArray=[];
 const docRef = firestore.collection('Colleges').doc('collegeCodes');
 docRef.get().then(function(doc){
-        var len =Object.keys(doc.data()).length
-        for(i=1;i<=len;i++){
-            var cCode = doc.data()[i];
+        var len =doc.data().codes.length
+        for(i=0;i<len;i++){
+            var cCode = doc.data().codes[i];
             collegeCodesArray.push(cCode);
             const colRef = firestore.collection(cCode).doc('collegeDetails');
             colRef.get().then(function(cdoc){

@@ -5,61 +5,77 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <link rel="icon" type="image/icon type" href="images/finallogo.png">
   <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.13.0/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.13.0/firebase-storage.js"></script>
   <link rel="stylesheet" href="css/additionalActivities.css">
+  <script src="js/additionalActivities.js"></script>
 </head>
 <body>
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
       <a class="navbar-brand" href="#">Government Portal</a>
     </div>
-    <ul class="nav navbar-nav">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="karmaIsaBitch.html">Feedback</a></li>
-      <li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Attendance<span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><a href="#">Students</a></li>
-          <li><a href="goodFateAttendance.html">Teachers</a></li> 
-        </ul>
-      </li>
-      <li><a href="#">Time Table</a></li>
-      <li class=" active dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#">More<span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li class="active"><a href="additionalActivities.html">Add Updates</a></li>
-        </ul>
-      </li>
-    </ul>
-    <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Name</a></li>
-        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
-    </ul>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="karmaIsaBitch.html">Feedback</a></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Attendance<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Students</a></li>
+            <li><a href="goodFateAttendance.html">Teachers</a></li> 
+          </ul>
+        </li>
+        <li><a href="#">Time Table</a></li>
+        <li class=" active dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">More<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li class="active"><a href="additionalActivities.html">Add Updates</a></li>
+          </ul>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+          <li><a href="#"><span class="glyphicon glyphicon-user"></span> Name</a></li>
+          <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+      </ul>
+    </div>
   </div>
 </nav>
 <br><br><br>  
 <div class="container">
-    <h1>UPDATES</h1>
+    <h2>New Announcement</h2>
     <form>
         <div class="form-group">
             <label for="Announcement">Enter the Announcement:</label>
             <textarea class="form-control" rows="5" id="Announcement"></textarea>
         </div>
-        <div class="form-group">
+        <div class="form-group" >
             <label>Do you want to Upload file?</label>
-            <label class="radio-inline"><input type="radio" name="optradio" checked>Yes</label>
-            <label class="radio-inline"><input type="radio" name="optradio">No</label>
+            <label class="radio-inline"><input type="radio" name="optradio" checked value="1" id="one">Yes</label>
+            <label class="radio-inline"><input type="radio" name="optradio" value="0" id="two">No</label>
+        </div>
+        <div class="form-group" id="file_in">
+            <label for="file">Upload file<i class="fa fa-paperclip" style="font-weight:bold;font-size: 18px;"></i>:</label>
+            <input type="file" id="file_announcement">
         </div>
         <div class="form-group">
-            <label for="file">Upload file:</label>
-            <input type="file" id="file">
+          <button type="button" class="btn btn-primary" id="btn_submit" onclick="inUpdate();">Post the Update</button>
         </div>
     </form>
+    <h2>Existing Announcements</h2>
+    <div id="putUpdates">   
+    </div>
 </div>
 </body>
 </html>

@@ -1,8 +1,17 @@
-.container h1{
+.container h2{
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: rgb(166, 173, 180);
     color: black;
     border-radius: 5px;
+    font-family: Tahoma, sans-serif;
+    letter-spacing: 0.02em;
+}
+
+.sampleUpdates p{
+    font-family:Tahoma, sans-serif;
+    font-size: 14px;
+    letter-spacing: .1em;
+    font-weight: bold;
 }
